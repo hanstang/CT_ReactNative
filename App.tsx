@@ -73,6 +73,13 @@ function App(): JSX.Element {
     CleverTap.recordEvent('Android Device');
   }
 
+  CleverTap.addListener(
+    CleverTap.CleverTapPushNotificationClicked,
+    (e) => {
+      console.log('Push Notification Clicked Event:', e);
+    }
+  );
+
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
